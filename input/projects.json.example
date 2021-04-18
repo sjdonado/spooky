@@ -1,11 +1,12 @@
 [
   {
-    "url": "https://URL.herokuapp.com",
+    "id": 1,
+    "url": "https://webhook.site/053b3d48-c724-4c39-8d4b-5d31aba0cb2c",
     "students": [
       { "code": "200000000", "name": "John Doe" }
     ],
     "endpoints": [
-      { "key": "create_user", "path": "/api/v1/users" }
+      { "key": "create_user", "path": "/" }
     ]
   }
 ]

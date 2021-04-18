@@ -15,10 +15,18 @@ type Endpoint struct {
 	Path string `json:"path"`
 }
 
+type Score struct {
+	Endpoint Endpoint `json:"endpoint"`
+	Value    int      `json:"value"`
+	Response string   `json:"response"`
+}
+
 type Project struct {
+	Id        int        `json:"id"`
 	Url       string     `json:"url"`
 	Students  []Student  `json:"students"`
 	Endpoints []Endpoint `json:"endpoints"`
+	Scores    []Score    `json:"scores"`
 }
 
 func check(e error) {
@@ -27,14 +35,12 @@ func check(e error) {
 	}
 }
 
-func Read() []Project {
+var Projects []*Project
+
+func Read() {
 	file, err := ioutil.ReadFile("./input/projects.json")
 	check(err)
 
-	var data []Project
-
-	err = json.Unmarshal([]byte(file), &data)
+	err = json.Unmarshal([]byte(file), &Projects)
 	check(err)
-
-	return data
 }
