@@ -1,0 +1,11 @@
+[
+  {
+    "url": "https://URL.herokuapp.com",
+    "students": [
+      { "code": "200000000", "name": "John Doe" }
+    ],
+    "endpoints": [
+      { "key": "create_user", "path": "/api/v1/users" }
+    ]
+  }
+]
